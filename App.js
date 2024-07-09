@@ -1,6 +1,6 @@
-import { StyleSheet, View } from "react-native";
-import AvatarProfile from "./src/components/AvatarProfile";
-import FormLogin from "./src/components/FormLogin";
+import { StyleSheet } from "react-native";
+import "react-native-gesture-handler";
+import Navigation from "./src/components/Navigation";
 
 export default function App() {
   const data = {
@@ -9,17 +9,7 @@ export default function App() {
     following: 20,
     followers: 30,
   };
-  return (
-    <View style={styles.container}>
-      <AvatarProfile
-        url={data.url}
-        post={data.post}
-        following={data.following}
-        followers={data.followers}
-      />
-      <FormLogin />
-    </View>
-  );
+  return (<Navigation/>);
 }
 
 const styles = StyleSheet.create({
