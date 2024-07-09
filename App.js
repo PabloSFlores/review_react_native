@@ -1,11 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from "react-native";
+import AvatarProfile from "./src/components/AvatarProfile";
+import FormLogin from "./src/components/FormLogin";
 
 export default function App() {
+  const data = {
+    url: "https://randomuser.me/api/portraits/men/36.jpg",
+    post: 10,
+    following: 20,
+    followers: 30,
+  };
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <AvatarProfile
+        url={data.url}
+        post={data.post}
+        following={data.following}
+        followers={data.followers}
+      />
+      <FormLogin />
     </View>
   );
 }
@@ -13,8 +25,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 64,
+    paddingHorizontal: 16,
+    backgroundColor: "#fff",
   },
 });
